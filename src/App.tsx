@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import IButton from './components/i-button/src/index'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <IButton
+        btnType='primary'
+        onClick={() => {
+          alert('点击按钮')
+        }}
+        render={() => <span>点我一下</span>}
+      ></IButton>
+      <IButton btnType='primary' size='small'>
+        primary
+      </IButton>
+      <IButton btnType='warning' size='large'>
+        warning large
+      </IButton>
+      <IButton btnType='danger'>danger</IButton>
+      <IButton btnType='danger' disabled>
+        danger
+      </IButton>
+      <IButton btnType='default'>defuault</IButton>
+      <IButton btnType='default' size='large'>
+        large
+      </IButton>
+      <IButton btnType='default' size='small' className=''>
+        small
+      </IButton>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
