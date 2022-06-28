@@ -1,9 +1,10 @@
 export const IButtonSize = {
-    'large': 'px-5 py-3',
-    'small': 'px-3 py-2',
-    'default': 'px-3 py-3',
+    'large': 'px-5 py-3 h-[42px]',
+    'small': 'px-2.5 py-3 h-[24px]',
+    'default': 'px-3 py-3 h-[32px]',
 }
-const baseClass = 'leading text-center rounded-[6px] rounded-sm border text-sm dark:bg-zinc-800 dark:text-white-200 dark:border-zinc-600 dark:hover:bg-zinc-700';
+const baseClass = 'inline-flex rounded justify-center border-[1px] text-[14px] items-center leading-1 whitespace-nowrap cursor-pointer box-border outline-none text-center duration-200 select-none align-middle border-[1px] dark:bg-zinc-800 dark:text-white-200 dark:border-zinc-600 dark:hover:bg-zinc-700';
+
 export const IButtonType = {
     'primary': `${baseClass} text-white bg-primary hover:bg-primary-200  dark:hover:text-white-200`,
     'default': `${baseClass} dark:text-zinc-200 dark:bg-zinc-800 hover:bg-gray-200  dark:hover:text-white-200`,
@@ -13,4 +14,8 @@ export const IButtonType = {
 export const IButtonDisabled = {
     'allowed': 'pointer-events-none cursor-not-allowed',
     'pointer': 'cursor-pointer',
+}
+
+export const IButtonRound = {
+    'round': 'rounded-[999px]',
 }

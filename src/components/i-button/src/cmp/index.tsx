@@ -3,29 +3,32 @@ import {
   IButtonSize,
   IButtonType,
   IButtonDisabled,
+  IButtonRound,
 } from '../style/index'
 import { ButtonProps } from '../type/index'
 
 const IButton: React.FC<ButtonProps> = props => {
   const {
     className,
-    disabled = false,
+    disabled,
     size = 'default',
-    btnType = 'default',
+    btnType = 'primary',
     render,
     children,
+    round = false,
     ...restProps
   } = props
+
+  const isDisabled = disabled
+    ? IButtonDisabled['allowed']
+    : IButtonDisabled['pointer']
+  const isRound = round ? IButtonRound['round'] : ''
   return (
     <button
-      className={`${IButtonType[btnType]} ${className} ${IButtonSize[size]} ${
-        disabled ? IButtonDisabled['allowed'] : IButtonDisabled['pointer']
-      } ${IButtonSize[size]} relative`}
+      className={`${IButtonType[btnType]} ${className} ${IButtonSize[size]} ${isDisabled} ${IButtonSize[size]} ${isRound}`}
       {...restProps}
     >
-      <div className='flex justify-center items-center'>
-        {render ? render() : children}
-      </div>
+      {render ? render(props) : children}
     </button>
   )
 }

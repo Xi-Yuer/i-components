@@ -1,5 +1,7 @@
 import React from 'react'
-import IButton from './components/i-button/src/index'
+import IButton from './components/i-button'
+import { IMenu } from './components/i-menu'
+import { IMenuItem } from './components/i-menu'
 function App() {
   return (
     <div>
@@ -8,11 +10,10 @@ function App() {
         onClick={() => {
           alert('点击按钮')
         }}
-        render={() => <span>点我一下</span>}
+        render={props => <span>点我一下</span>}
       ></IButton>
-      <IButton btnType='primary' size='small'>
-        primary
-      </IButton>
+      <IButton size='small'>primary</IButton>
+      <IButton size='small'>按钮</IButton>
       <IButton btnType='warning' size='large'>
         warning large
       </IButton>
@@ -24,9 +25,18 @@ function App() {
       <IButton btnType='default' size='large'>
         large
       </IButton>
-      <IButton btnType='default' size='small' className=''>
+      <IButton btnType='default' size='small' className=' ' round>
         small
       </IButton>
+      <hr />
+      <IMenu mode='vertical' onSelect={index => {}}>
+        <IMenuItem index={0}>item1</IMenuItem>
+        <IMenuItem index={1}>item2</IMenuItem>
+      </IMenu>
+      <IMenu mode='horizontal' onSelect={index => {}}>
+        <IMenuItem index={0}>item1</IMenuItem>
+        <IMenuItem index={1}>item2</IMenuItem>
+      </IMenu>
     </div>
   )
 }
